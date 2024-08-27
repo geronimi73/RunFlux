@@ -2,8 +2,8 @@
 
 ## Install stuff we need
 add-apt-repository -y ppa:rmescandon/yq
-apt update
-apt install -y screen vim git-lfs unzip yq
+apt-get update
+apt-get install -y screen vim git-lfs unzip yq
 
 # Debug
 env
@@ -50,7 +50,7 @@ declare -A yaml_params=(
 )
 
 for param in "${!yaml_params[@]}"; do
-  yq eval ".${param} = env(${yaml_params[$param]})" config/ai-toolkit_config.yaml > config/temp.yaml && mv config/temp.yaml config/ai-toolkit_config.yaml
+  yq eval -i ".${param} = env(${yaml_params[$param]})" config/ai-toolkit_config.yaml
 done
 
 # array vars
@@ -58,10 +58,10 @@ IFS=';' read -ra SAMPLE_PROMPTS_ARRAY <<< "$SAMPLE_PROMPTS"
 
 for prompt in "${SAMPLE_PROMPTS_ARRAY[@]}"; do
   echo PROMPT: $prompt
-  yq eval ".config.process[0].sample.prompts += \"$prompt\"" config/ai-toolkit_config.yaml > temp.yaml && mv temp.yaml config/ai-toolkit_config.yaml
+  yq eval -i ".config.process[0].sample.prompts += \"$prompt\"" config/ai-toolkit_config.yaml 
 done
 
-yq -i 'del(.config.process[0].sample.prompts[0])' config/ai-toolkit_config.yaml
+yq eval -i 'del(.config.process[0].sample.prompts[0])' config/ai-toolkit_config.yaml
 
 
 # upload config
