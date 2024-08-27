@@ -32,8 +32,6 @@ wget -O config/ai-toolkit_config.yaml https://raw.githubusercontent.com/geronimi
 export FOLDER_PATH="/workspace/ai-toolkit/images"
 export MODEL_NAME="black-forest-labs/FLUX.1-dev"
 
-# cp config/examples/train_lora_flux_24gb.yaml config/
-
 declare -A yaml_params=(
   [config.process[0].network.linear]=LORA_RANK
   [config.process[0].network.linear]=LORA_ALPHA
@@ -67,7 +65,7 @@ yq eval -i 'del(.config.process[0].sample.prompts[0])' config/ai-toolkit_config.
 # upload config
 huggingface-cli upload $HF_REPO config/ai-toolkit_config.yaml
 
-sleep 30000
+# sleep 30000
 
 ## SCHEDULE UPLOADS of samples/adapters every 3 mins 
 mkdir -p output/my_first_flux_lora_v1/samples
