@@ -86,5 +86,6 @@ huggingface-cli upload $HF_REPO output/my_first_flux_lora_v1 --include="*.safete
 huggingface-cli upload $HF_REPO ai-toolkit.log
 
 # sleep infinity
+sleep 120
 runpodctl remove pod $RUNPOD_POD_ID
 
