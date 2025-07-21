@@ -93,5 +93,5 @@ huggingface-cli upload $HF_REPO ai-toolkit.log
 
 # sleep infinity
 sleep 120
-# runpodctl remove pod $RUNPOD_POD_ID
+runpodctl remove pod $RUNPOD_POD_ID
 
