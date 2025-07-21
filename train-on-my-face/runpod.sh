@@ -1,9 +1,12 @@
 # !/bin/bash
 
 ## Install stuff we need
-add-apt-repository -y ppa:rmescandon/yq
 apt-get update
-apt-get install -y screen vim git-lfs unzip yq
+apt-get install -y screen vim git-lfs unzip 
+
+# Install yq (YAML parser)
+wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq &&\
+    chmod +x /usr/local/bin/yq
 
 # Debug
 env
