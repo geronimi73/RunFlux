@@ -14,7 +14,7 @@ git clone https://github.com/ostris/ai-toolkit.git
 cd ai-toolkit
 git reset --hard 40a8ff57311d2545b5fbd0226988acda3015d6cf
 git submodule update --init --recursive
-# pip install accelerate transformers diffusers huggingface_hub torchvision safetensors lycoris-lora==1.8.3 flatten_json pyyaml oyaml tensorboard kornia invisible-watermark einops toml albumentations pydantic omegaconf k-diffusion open_clip_torch timm prodigyopt controlnet_aux==0.0.7 python-dotenv bitsandbytes hf_transfer lpips pytorch_fid optimum-quanto sentencepiece 
+# pip install -U accelerate transformers diffusers huggingface_hub torchvision safetensors lycoris-lora==1.8.3 flatten_json pyyaml oyaml tensorboard kornia invisible-watermark einops toml albumentations pydantic omegaconf k-diffusion open_clip_torch timm prodigyopt controlnet_aux==0.0.7 python-dotenv bitsandbytes hf_transfer lpips pytorch_fid optimum-quanto sentencepiece 
 # pip install albucore==0.0.16
 pip3 install -r requirements.txt
 
@@ -90,5 +90,5 @@ huggingface-cli upload $HF_REPO ai-toolkit.log
 
 # sleep infinity
 sleep 120
-runpodctl remove pod $RUNPOD_POD_ID
+# runpodctl remove pod $RUNPOD_POD_ID
 
