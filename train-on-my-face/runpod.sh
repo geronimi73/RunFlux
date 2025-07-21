@@ -12,7 +12,7 @@ env
 cd /workspace
 git clone https://github.com/ostris/ai-toolkit.git
 cd ai-toolkit
-git reset --hard 40a8ff57311d2545b5fbd0226988acda3015d6cf
+git reset --hard ca5cf827a1cb49cdfc5f88747ebc3d0db905f26e
 git submodule update --init --recursive
 # pip install -U accelerate transformers diffusers huggingface_hub torchvision safetensors lycoris-lora==1.8.3 flatten_json pyyaml oyaml tensorboard kornia invisible-watermark einops toml albumentations pydantic omegaconf k-diffusion open_clip_torch timm prodigyopt controlnet_aux==0.0.7 python-dotenv bitsandbytes hf_transfer lpips pytorch_fid optimum-quanto sentencepiece 
 # pip install albucore==0.0.16
