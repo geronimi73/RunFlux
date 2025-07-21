@@ -78,7 +78,7 @@ mkdir -p output/my_first_flux_lora_v1/samples
 touch ai-toolkit.log
 
 huggingface-cli upload $HF_REPO output/my_first_flux_lora_v1 --include="*.safetensors" --every=3 &
-huggingface-cli upload $HF_REPO ai-toolkit.log --every=3 &
+huggingface-cli upload $HF_REPO ai-toolkit.log --every=1 &
 
 # (for some reason --every does not upload with samples/ dir, no error, no idea -> bash loop)
 bash -c 'while true; do huggingface-cli upload $HF_REPO output/my_first_flux_lora_v1/samples samples; sleep 180; done' &
